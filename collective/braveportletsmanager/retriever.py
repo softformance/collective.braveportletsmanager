@@ -132,9 +132,10 @@ class PortletRetriever(base.PortletRetriever):
                 settings = IPortletAssignmentSettings(assignment)
             except Exception:
                 logException(u'Error during retrieving assignment settings. '
-                    'Context: "%s", Assignment: "%s", Category: "%s", Key: "%s"'
-                    % ('/'.join(self.context.getPhysicalPath()),
-                    assignment.__class__.__name__, category, key),
+                    'Context: "%s", Category: "%s", Key: "%s", Assignment '
+                    'Class: "%s", Assignment ID: "%s"' % (
+                    '/'.join(self.context.getPhysicalPath()), category, key,
+                    str(assignment.__class__), assignment.__name__),
                     context=self.context)
                 continue
 
@@ -148,7 +149,7 @@ class PortletRetriever(base.PortletRetriever):
         return assignments
 
 
-class PlacelessPortletRetriever(PortletRetriever):
+class PlacelessPortletRetriever(base.PlacelessPortletRetriever):
     """A placeless portlet retriever.
 
     This will aggregate user portlets, then group portlets.
@@ -177,14 +178,13 @@ class PlacelessPortletRetriever(PortletRetriever):
                 for assignment in mapping.get(key, {}).values():
                     try:
                         settings = IPortletAssignmentSettings(assignment)
-                        raise Exception('bad assignment')
                     except Exception:
                         logException(u'Error during retrieving assignment '
-                            'settings. Context: "%s", Assignment: "%s", '
-                            'Category: "%s", Key: "%s"' % (
-                            '/'.join(self.context.getPhysicalPath()),
-                            assignment.__class__.__name__, category, key),
-                            context=self.context)
+                            'settings. Context: "%s", Category: "%s", Key: '
+                            '"%s", Assignment Class: "%s", Assignment ID: "%s"'
+                            % ('/'.join(self.context.getPhysicalPath()),
+                            category, key, str(assignment.__class__),
+                            assignment.__name__), context=self.context)
                         continue
 
                     if not settings.get('visible', True):
