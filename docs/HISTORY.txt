@@ -4,4 +4,6 @@ Changelog
 1.0 - Unreleased
 ----------------
 
-- Initial release
+- Initial release: do not break with broken portlets + allows you to remove
+  broken portlets on standard Manage Portlets form.
+  [vipod]

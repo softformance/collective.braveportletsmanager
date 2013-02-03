@@ -7,6 +7,8 @@
 
   <five:registerPackage package="." initialize=".initialize" />
 
+  <include package=".browser" />
+
   <genericsetup:registerProfile
       name="default"
       title="collective.braveportletsmanager"
@@ -14,6 +16,5 @@
       description="Installs the collective.braveportletsmanager package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-  <!-- -*- extra stuff goes here -*- -->
-  
+
 </configure>

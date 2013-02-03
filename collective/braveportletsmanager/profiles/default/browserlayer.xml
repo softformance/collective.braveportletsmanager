@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers>
+  <layer
+     name="collective_braveportletsmanager_layer"
+     interface="collective.braveportletsmanager.browser.interfaces.IPackageLayer"
+     />
+</layers>

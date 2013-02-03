@@ -1,0 +1,25 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="collective.braveportletsmanager">
+
+  <browser:page
+      for="plone.portlets.interfaces.IPortletAssignmentMapping"
+      class=".editmanager.ManagePortletAssignments"
+      permission="plone.app.portlets.ManageOwnPortlets"
+      name="delete-portlet"
+      attribute="delete_portlet"
+      layer=".interfaces.IPackageLayer"
+      />
+
+  <browser:page
+      for="*"
+      name="inlineDeletePortlet"
+      class=".kss.PortletManagerKSS"
+      attribute="delete_portlet"
+      permission="plone.app.portlets.ManageOwnPortlets"
+      layer=".interfaces.IPackageLayer"
+      />
+
+</configure>
