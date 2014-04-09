@@ -13,6 +13,10 @@ Compatibility
 
 Developed and tested under Plone 4.2.
 
+Note: this addon code was integrated into Plone CMS core since Plone 4.3 version:
+* https://dev.plone.org/ticket/7375
+* https://github.com/plone/plone.app.portlets/commit/f69fb3ff9133a281233ee06fc14fcc317fb8bc33
+
 
 Installation
 ------------
@@ -24,4 +28,4 @@ Addon Control Panel.
 Authors
 -------
 
-Vitaliy Podoba
+Vitaliy Podoba, SoftFormance.com (contact@softformance.com)
